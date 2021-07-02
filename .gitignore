@@ -1,0 +1,14 @@
+
+### IntelliJ IDEA ###
+.idea
+.build
+
+# Allure
+.allure
+
+# compiled output
+.target
+
+
+# Project exclude paths
+/target/

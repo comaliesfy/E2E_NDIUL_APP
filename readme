@@ -1,0 +1,10 @@
+запуск тестов:
+mvn clean test
+mvn clean test -Dtest=%_SuiteName_%
+
+список Suite:
+SuiteRegress
+SuiteSF
+SuiteSmoke
+
+После прогона

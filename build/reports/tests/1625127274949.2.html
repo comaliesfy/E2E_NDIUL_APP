@@ -1,0 +1,105 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+<head>
+    <title tiles:fragment="title">Messages : Create</title>
+    <meta charset="utf-8">
+    <style>
+    body {
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      font-size: 14px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: rgb(244, 244, 244);
+    }
+
+    ;
+
+    </style>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+<div>
+    <img src="/app/resources/img/logo.png" style="margin: 16px 30px;">
+</div>
+<script>
+   var login = function (){
+      	jQuery.ajax({
+            type: "POST",
+            //url: "http://localhost:8080/sbr-ndkn/login.html",
+			url: "./login.html",
+            //data:{username: $('#username').val(), password:"132"},
+			data:{username: $('#username').val()},
+            headers: {
+             'Content-Type': 'application/x-www-form-urlencoded',
+			 'iv-user': $('#username').val()
+             // 'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+           },
+           xhrFields: {
+              withCredentials: true
+            }
+
+        })
+        .done(function(){
+             window.location = window.location.origin +'/tax-sunr/sbr-ndkn/'
+          })
+    }
+
+</script>
+<div align="center" class="q" tiles:fragment="content">
+    <form method="post" name="f" style="font-size: 14px;">
+        <!--<fieldset>-->
+        <legend>
+            <!--Please Login-->
+        </legend>
+        <div class="alert alert-error" th:if="${param.error}">
+            <!--Invalid username and password.-->
+        </div>
+        <div class="alert alert-success" th:if="${param.logout}">
+            <!--You have been logged out.-->
+        </div>
+        <table cellpadding="5" valign="top">
+            <tbody>
+            <tr>
+                <td>
+                    <label for="username" style="font-weight: 700;">Логин</label>
+                </td>
+                <td>
+                    <input id="username" name="username"
+                           style="border-radius: 4px; border: 1px solid rgb(169, 68, 66); border-image: none; width: 522px; height: 34px;"
+                           type="text" value="ndkn1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password" style="font-weight: 700;">Пароль</label>
+                </td>
+                <td>
+                    <input id="password" name="password"
+                           style="border-radius: 4px; border: 1px solid rgb(169, 68, 66); border-image: none; width: 522px; height: 34px;"
+                           type="password" value="VUstupr7">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                </td>
+                <td>
+                    <div class="form-actions">
+                        <button class="btn" id="login-button-id" onclick="login()"
+                                style="border-radius: 4px; border: 1px solid transparent; border-image: none; width: 50%; height: 34px; color: rgb(255, 255, 255); font-size: 14px; background-color: rgb(62, 167, 28);"
+                                type="button">Войти
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <!--</fieldset>-->
+    </form>
+</div>
+
+
+</body>
+</html>
