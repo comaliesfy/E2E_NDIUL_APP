@@ -1,6 +1,7 @@
 package ru.stqa.ptf.tests.testsUNP.Declaration;
 
 import io.qameta.allure.*;
+import org.junit.After;
 import org.junit.Test;
 import ru.stqa.ptf.api.REST;
 import ru.stqa.ptf.appmanager.TestBase;

@@ -13,7 +13,7 @@ public class Expenses {
     private final SelenideElement sectionExpenses = $x("//a[@id='directory/expenses']");
     private final SelenideElement assertSF = $x("//h4[contains(text(),'Виды расходов')]");
     private final SelenideElement nameExpensesFilter = $x("//input[@placeholder='Введите вид расхода']");
-    private final SelenideElement name = $("#"+EXPENSE_SHORT_NAME);
+    private final SelenideElement name = $("#" + EXPENSE_SHORT_NAME);
     private final SelenideElement codeExpensesFilter = $x("//input[@placeholder='Введите код расхода']");
     private final SelenideElement code = $x("//div[@id='" + EXPENSE_CODE + "']");
     private final SelenideElement analiticCodeFilter = $x("//input[@placeholder='Введите код группы']");

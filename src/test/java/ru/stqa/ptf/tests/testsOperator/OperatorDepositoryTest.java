@@ -75,7 +75,6 @@ public class OperatorDepositoryTest extends TestBase {
         rest.deleteClient(rest.findClient());
     }
 
-    @Ignore
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Story("Загрузка файла операций депозитария, удаление")

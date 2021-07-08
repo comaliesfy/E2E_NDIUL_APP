@@ -7,4 +7,9 @@ SuiteRegress
 SuiteSF
 SuiteSmoke
 
-После прогона
+После прогона выполнить для создания отчета о прогоне
+mvn allure report
+mvn allure serve
+
+
+--На тестовом стенде завести тестовые данные ( по пакету src/main/java/Configs)

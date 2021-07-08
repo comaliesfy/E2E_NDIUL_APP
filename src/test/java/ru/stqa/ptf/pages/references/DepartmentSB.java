@@ -28,9 +28,9 @@ public class DepartmentSB {
     }
 
     public void findDepartmentEntity() {
-        codeInput.sendKeys("100");
+        codeInput.sendKeys("123");
         code.click();
-        departmentInput.sendKeys("108717");
+        departmentInput.sendKeys("108633");
         department.click();
         searchButton.click();
         Assert.assertTrue(GridHelpers.elementIsVisible(entityAssert));

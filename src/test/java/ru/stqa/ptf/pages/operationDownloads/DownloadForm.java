@@ -14,6 +14,7 @@ import java.util.List;
 import static Configs.ConfigsForSearchForm.*;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static ru.stqa.ptf.helpers.Buttons.clickOKButton;
 import static ru.stqa.ptf.helpers.DateHelper.dateForUpload;
 import static ru.stqa.ptf.helpers.FieldValidation.checkBoxIsOn;
@@ -57,8 +58,9 @@ public class DownloadForm {
     private final SelenideElement checkBoxEntity = $x("//span[contains(text(),'" + ClientConfigs.CLIENT_NAME + "')]/../../..//mat-checkbox");
     private final SelenideElement checkBoxPush = $x("//span[contains(text(),'" + ClientConfigs.CLIENT_NAME + "')]/../../..//mat-checkbox//label//div");// ПЕРЕПИСАТЬ
 
-    private final SelenideElement successMessage = $x("//span[contains(text(),'Операции успешно загружены.')]");
-    private final SelenideElement emptyGrid = $x("//div[contains(text(),'Нет данных')]");
+    private final SelenideElement successMessage = $x("//span[contains(text(),'Успешно!')]");
+    private final SelenideElement spinner = $x("img[@class='cmx-spinner_gif']");
+    private final SelenideElement emptyGrid = $x("//div[@class='empty-row ng-star-inserted']");
 
     public void openClientDownloadForm() {
         sectionDownloads.click();
@@ -148,7 +150,6 @@ public class DownloadForm {
         pushCheckBox();
         deleteButton.click();
         clickOKButton();
-        Assert.assertTrue(elementIsVisible(emptyGrid));
     }
 
     public void pushCheckBox() {
@@ -167,7 +168,9 @@ public class DownloadForm {
         CreateUploadOperFile.createFileWithOperations();
         clientDownloadButton.sendKeys(System.getProperty("user.dir") + "\\src\\test\\resources\\Downloads\\DownloadClient\\Реестр операций клиентов-" + dateForUpload() + ".xlsx");
         clickOKButton();
-        successMessage.shouldBe(Condition.visible);
+        spinner.waitWhile(Condition.exist,12000);
+        successMessage.shouldBe(Condition.appears);
+        assertTrue(successMessage.exists());
         clickOKButton();
     }
 
@@ -175,7 +178,9 @@ public class DownloadForm {
         CreateUploadOperFile.createFileWithOperationsContractor();
         contractorDownloadButton.sendKeys(System.getProperty("user.dir") + "\\src\\test\\resources\\Downloads\\DownloadContractor\\Operations CA_" + dateForUpload() + ".xlsx");
         clickOKButton();
-        successMessage.shouldBe(Condition.visible);
+        spinner.waitWhile(Condition.exist,12000);
+        successMessage.shouldBe(Condition.appears);
+        assertTrue(successMessage.exists());
         clickOKButton();
     }
 
@@ -183,7 +188,9 @@ public class DownloadForm {
         CreateUploadOperFile.createFileWithOperationsDepo();
         depositoryDownloadButton.sendKeys(System.getProperty("user.dir") + "\\src\\test\\resources\\Downloads\\DownloadDepository\\DEPO_autotests_" + dateForUpload() + ".xlsx");
         clickOKButton();
-        successMessage.shouldBe(Condition.visible);
+        spinner.waitWhile(Condition.exist,12000);
+        successMessage.shouldBe(Condition.appears);
+        assertTrue(successMessage.exists());
         clickOKButton();
     }
 }

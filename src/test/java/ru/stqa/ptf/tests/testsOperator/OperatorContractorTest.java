@@ -61,7 +61,6 @@ public class OperatorContractorTest extends TestBase {
         pdSF.deletePD();
     }
 
-    @Ignore
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Story("Создание оператором операции")

@@ -71,7 +71,6 @@ public class OperatorClientTest extends TestBase {
         opDF.createClientOper();
     }
 
-    @Ignore
     @Test
     @Severity(SeverityLevel.CRITICAL)
     @Story("Загрузка файла операций клиентов, удаление")

@@ -5,7 +5,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import ru.stqa.ptf.helpers.Buttons;
 
-import static com.codeborne.selenide.Condition.appear;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$x;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -47,6 +47,7 @@ public class KND56 {
     private final SelenideElement downloadXML = $x("//span[contains(text(),'Транспортный файл XML')]/../../..//span[contains(text(),'Скачать')]");
     private final SelenideElement downloadExcel = $x("//span[contains(text(),'Отчет об ошибках')]/../../..//span[contains(text(),'Скачать')]");
     private final SelenideElement downloadOperList = $x("//span[contains(text(),'Операции декларации клиентов')]/../../..//span[contains(text(),'Скачать')]");
+    private final SelenideElement downloadFileStatus=$x("//span[@title='Сформирован']");
     private final SelenideElement clientTableResult = $x("//cmx-declarations-clients-table//datatable-row-wrapper");
     private final SelenideElement operationTableResult = $x("//cmx-declarations-operations-table//datatable-row-wrapper");
 
@@ -61,8 +62,9 @@ public class KND56 {
         infMessage.shouldBe(Condition.visible);
         Buttons.clickOKButton();
         assertTrue(elementIsVisible(assertDocTab));
-        statusField.waitUntil(appear, 5000);
-        statusField.shouldHave(Condition.text("Сформирован"));
+        while(!downloadFileStatus.exists()){
+            updateButton.click();
+        }
         assertEquals("Рассчитана", statusField.getAttribute("innerText"));
         assertEquals("Сформирован", statusEDFiled.getAttribute("innerText"));
     }
