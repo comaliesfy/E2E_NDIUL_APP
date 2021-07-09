@@ -154,6 +154,7 @@ public class NaturalPerson {
         assertTrue(fieldIsValid(innInput));
         innInput.sendKeys("189799678191");
         assertFalse(fieldIsValid(innInput));
+        innInput.clear();
         innInput.sendKeys("189799678197");
         assertTrue(fieldIsValid(innInput));
     }

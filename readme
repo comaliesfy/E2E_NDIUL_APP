@@ -7,4 +7,9 @@ SuiteRegress
 SuiteSF
 SuiteSmoke
 
-После прогона
+После прогона выполнить для создания отчета о прогоне
+mvn allure report
+mvn allure serve
+
+-Тесты выполняются на стенде //sber-ndkn-0.vm.cmx.ru, настройка ссылок на стенды для выполнения тестов: src/main/java/Configs/URLPages.java
+-На тестовом стенде завести тестовые данные(по пакету src/main/java/Configs)

@@ -3,7 +3,6 @@ package ru.stqa.ptf.tests.testsAdmin;
 import io.qameta.allure.*;
 import org.junit.Before;
 import org.junit.Test;
-import ru.stqa.ptf.api.REST;
 import ru.stqa.ptf.appmanager.TestBase;
 import ru.stqa.ptf.pages.administration.Administration;
 import ru.stqa.ptf.pages.login.LoginPage;

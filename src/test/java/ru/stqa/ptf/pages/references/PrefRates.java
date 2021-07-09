@@ -28,14 +28,14 @@ public class PrefRates {
     // Детальная форма
     private final SelenideElement rateInput = $x("//input[@id='eRate-input-id']");
     private final SelenideElement incomeInput = $x(" //label[contains(text(),'Доход действия льготы*: ')]/../..//input");
-    private final SelenideElement income = $("#"+PRATE_INCOME);
+    private final SelenideElement income = $x("//div[contains(text(),'"+PRATE_INCOME+"')]");
     private final SelenideElement countryInput = $x(" //label[contains(text(),'Страна действия льготы*: ')]/../..//input");
-    private final SelenideElement country = $("#"+PRATE_COUNTRY);
+    private final SelenideElement country = $x("//div[@id='"+PRATE_COUNTRY+"']");
     private final SelenideElement clientTypeInput = $x("//label[contains(text(),'Тип клиента*:')]/../..//input");
-    private final SelenideElement clientType = $("#"+PRATE_CLIENTTYPE);
+    private final SelenideElement clientType = $x("//div[@id='"+PRATE_CLIENTTYPE+"']");
     private final SelenideElement countryFreeCheckBox = $x( "//input[@id='countryFreeCheckbox-input-id']");
     private final SelenideElement incomeTypeInput = $x("//label[contains(text(),'Тип дохода: ')]/../..//input");
-    private final SelenideElement incomeShort = $("#"+PRATE_INCOMESHORT);
+    private final SelenideElement incomeShort = $x("//div[@id='"+PRATE_INCOMESHORT+"']");
     private final SelenideElement linkDocInput = $x("//label[contains(text(),'Связанный документ:')]/../..//input");
     private final SelenideElement linkDocEntity = $x("//div[@id='Основание АВТОТЕСТ']");
     private final SelenideElement definingDocInput = $x("//label[contains(text(),'Определяющий документ:')]/../..//input");

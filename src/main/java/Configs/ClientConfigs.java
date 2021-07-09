@@ -2,7 +2,7 @@ package Configs;
 
 public class ClientConfigs {
 
-    public static final String CLIENT_NAME = "ClientAutotes";
+    public static final String CLIENT_NAME = "Autotest";
     public static final String CLIENT_NAMERUS = "Автотест2020";
     public static final String CLIENT_NAMEdrop = CLIENT_NAME + " / " + CLIENT_NAME;
 
@@ -12,7 +12,7 @@ public class ClientConfigs {
     public static final String CLIENT_PHONE = "88888888888888888888";
 
     //данные клиента на дедубликацию
-    public static final String DEDUB_CLIENT_NAME = "ClientAutotes-Debulication";
+    public static final String DEDUB_CLIENT_NAME = "Autotest-Debulication";
     public static final String DEDUB_CLIENT_INN = "3463244624426344";
     public static final String DEDUB_CLIENT_COUNTRY = "БАНГЛАДЕШ";
     public static final String DEDUB_CLIENT_SWIFT = "JK555555";

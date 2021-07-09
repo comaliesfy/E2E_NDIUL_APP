@@ -29,9 +29,8 @@ public class ActionsIF {
     public static void fillInputAndSelect(SelenideElement element,String text, SelenideElement element1) {
         element.clear();
         element.click();
-        element.sendKeys(text);
-        element1.shouldBe(Condition.visible).click();
-    }
+        GridHelpers.sendCharKeys(text,element,element1);
+     }
 
     public static void pickAndSelect(SelenideElement element, SelenideElement element1) {
         element.click();
@@ -39,9 +38,6 @@ public class ActionsIF {
         element1.click();
     }
 
-//    public static void moveToElement(SelenideElement element) {
-//        element.scrollIntoView("{block: \"end\"}");
-//    }
 }
 
 

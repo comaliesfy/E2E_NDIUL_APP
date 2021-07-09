@@ -39,7 +39,7 @@ public class ReferencesConfig {
     //Льготные ставки
     public static final String PRATE_RATE = "10";
     public static final String PRATE_COUNTRY = "ВЕЛИКОБРИТАНИЯ";
-    public static final String PRATE_INCOME = "05 Дивиденды, перечисляемые иностранным организациям, действующим в интересах третьих лиц, по которым не предоставлена обобщенная информация";
+    public static final String PRATE_INCOME = "05 Дивиденды, перечисляемые иностранным организациям, действующим в интересах третьих лиц, по которым не предоставлена обобщенная";
     public static final String PRATE_CLIENTTYPE = "ФЛ";
     public static final String PRATE_INCOMESHORT = "Дивиденды по ценным бумагам, которые учитываются на счёте ДЕПО депозитарных программ";
     public static final String PRATE_DEFINING_DOC = "Автотест Определяющий документ";

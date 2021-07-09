@@ -1,16 +1,18 @@
 package ru.stqa.ptf.pages.primaryDoc;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.Assert;
 import ru.stqa.ptf.helpers.ActionsIF;
 import ru.stqa.ptf.helpers.Buttons;
 import ru.stqa.ptf.helpers.GridHelpers;
 
+import java.util.concurrent.TimeUnit;
+
 import static Configs.ClientConfigs.*;
 import static Configs.ReferencesConfig.ONL_FULLNAME;
 import static Configs.ReferencesConfig.PRATE_RATE;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static ru.stqa.ptf.helpers.GridHelpers.focusAndPush;
@@ -124,7 +126,6 @@ public class PrimaryDocDF {
     private final SelenideElement saveRateDepo = $x("//button[@id='saveRateContractDepoType-cmxButton-id']");
     private final SelenideElement cancelRateDepo = $x("//button[@id='cancelRateContractDepoType-cmxButton-id']//span[@class='mat-button-wrapper']");
 
-    private final SelenideElement divDropdown = $("#dropdown-list");
     //заполнение информации нерезидента
     public void fillNonresidenceInfo() {
         ActionsIF.select(countrySelect, CLIENT_COUNTRY);
@@ -227,6 +228,7 @@ public class PrimaryDocDF {
 
     //подтержедние Вида дохода (для роли-Контроллер)
     public void approveIncomeKind() {
+        incomeKindEntity.waitUntil(Condition.visible, 3000);
         Assert.assertTrue(GridHelpers.elementIsVisible(incomeKindEntity));
         openIncomeKind();
         acceptIncomeKind.click();
