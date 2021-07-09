@@ -20,7 +20,7 @@ public class GridHelpers {
 
     //проверка есть ли элемент на странице
     public static boolean elementIsVisible(SelenideElement locator) {
-        return  locator.is(Condition.exist);
+        return locator.is(Condition.exist);
 
     }
 

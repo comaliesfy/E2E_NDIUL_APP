@@ -28,7 +28,7 @@ public class IncomeKind {
     //кнопки нижнего меню
     private final SelenideElement addButton = $x("//span[contains(text(),' Добавить запись ')]");
     private final SelenideElement deleteButton = $x("//span[contains(text(),' Удалить запись ')]");
-    private final SelenideElement assertIncKind = $x("td[@id='/" + INCKIND_FULLNAME+"']");
+    private final SelenideElement assertIncKind = $x("//td[@id='/" + INCKIND_FULLNAME+"']");
     //поля детальной формы
     private final SelenideElement codeInput = $x("//input[@id='code-cmxTextInput-id']");
     private final SelenideElement typeDropDown = $x("//input[@id='incomeKind-autocomplete-id']/..//span");

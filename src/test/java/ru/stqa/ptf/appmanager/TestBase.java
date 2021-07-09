@@ -29,10 +29,11 @@ public abstract class TestBase {
 
     @BeforeClass
     public static void openBrowserPage() {
+
         Configuration.browser = "ie";
         setWebDriver(driver);
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(4, TimeUnit.SECONDS);
         goToLoginPage();
         login.login(USR_UNP);
